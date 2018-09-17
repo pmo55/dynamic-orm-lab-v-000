@@ -59,4 +59,9 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first} = #{formatted_value}"
     DB[:conn].execute(sql)
   end
+  
+  def self.table_name
+  self.table_name.to_s.downcase.pluralize
+end
+
 end
